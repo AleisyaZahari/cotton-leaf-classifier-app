@@ -18,6 +18,8 @@ st.markdown("""
         <hr style='border-top: 2px solid #bbb;'/>
     </div>
 """, unsafe_allow_html=True)
+# Language selector
+# language = st.radio("🌐 Choose Language / Pilih Bahasa:", ("English 🇬🇧", "Bahasa Indonesia 🇮🇩"))
 
 # Download model from Google Drive
 file_id = '1waADn53Sa3aFKOfNSyKvCo9l8-Tn5CvF'
@@ -42,14 +44,39 @@ if model is None:
 
 # Class labels and descriptions
 class_names = ['Aphids', 'Army Worm', 'Bacterial Blight', 'Healthy', 'Powdery Mildew', 'Target Spot']
+# Class labels and detailed descriptions
 class_descriptions = {
-    'Aphids': '🪲 Aphids are small sap-sucking insects that weaken plants by feeding on their juices.',
-    'Army Worm': '🐛 Army worms are caterpillars that can rapidly defoliate plants and cause significant crop loss.',
-    'Bacterial Blight': '🦠 A serious disease causing water-soaked lesions that turn brown and dry, leading to leaf drop.',
-    'Healthy': '🌱 The leaf appears healthy with no visible signs of pests or diseases.',
-    'Powdery Mildew': '🍂 A fungal disease that looks like white powder on the surface of leaves and stems.',
-    'Target Spot': '🎯 A fungal infection that causes concentric ring spots, usually with a yellow halo around them.'
+    'Aphids': (
+        "🪲 Aphids are tiny insects (1–3 mm) that feed by sucking plant sap, especially from the shoot tips and flowers. "
+        "Their feeding causes leaves to wrinkle, yellow, and curl. More critically, aphids can transmit plant viruses, "
+        "posing a serious threat to healthy crops. Rapid identification and control are essential to prevent yield losses."
+    ),
+    'Army Worm': (
+        "🐛 Army Worms (Spodoptera sp.) are destructive pests that attack mainly the leaves of plants. They begin damaging "
+        "during the larval stage by creating holes in the leaves and, as they mature, can devour entire leaf surfaces, "
+        "young shoots, flowers, and even stems. Their population surges during the rainy season and requires immediate management."
+    ),
+    'Bacterial Blight': (
+        "🦠 Bacterial Blight is caused by *Xanthomonas campestris pv. malvacearum*. It appears as yellow spots that turn "
+        "dark brown or black, spreading along the leaf veins and leading to widespread tissue death. The disease spreads "
+        "rapidly through splashing water, wind-driven rain, or irrigation. Early detection and control are crucial."
+    ),
+    'Healthy': (
+        "🌱 This cotton leaf appears healthy with no visible signs of disease or pest infestation. Regular monitoring is "
+        "recommended to maintain plant health and detect any early signs of damage."
+    ),
+    'Powdery Mildew': (
+        "🍂 Powdery Mildew is a fungal disease that forms a white, powdery layer on the leaf surface. It spreads easily "
+        "without needing free water, making it highly contagious. Caused by airborne spores, this disease weakens the plant "
+        "by affecting photosynthesis. Early detection helps limit its spread."
+    ),
+    'Target Spot': (
+        "🎯 Target Spot is caused by the fungus *Corynespora cassiicola*, forming brown lesions that expand progressively. "
+        "These spots often have a dark center and may dry out and kill the infected areas. Severe infections can cause leaf "
+        "drop and significantly reduce crop yield."
+    )
 }
+
 
 # Upload Section
 st.markdown("### 📤 Upload Your Image")
